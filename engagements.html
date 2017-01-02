@@ -24,7 +24,7 @@
     <!-- Theme CSS -->
     <link href="css/agency.min.css" rel="stylesheet">
     <link href="css/thumbnail-gallery.css" rel="stylesheet">
-
+    <link href="dist/ekko-lightbox.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +45,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">AimPhotography</a>
+                <a class="navbar-brand page-scroll" href="index.html">AimPhotography</a>
             </div>
 
             <!-- /.navbar-collapse -->
@@ -76,17 +76,17 @@
             ?>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                    <img class="img-fluid" src="./img/Engagements/DSC_0033.JPG" data-toggle="lightbox" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                    <img class="img-responsive" src="http://placehold.it/400x300" data-toggle="lightbox" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                    <img class="img-responsive" src="http://placehold.it/400x300" data-toggle="lightbox" alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
@@ -174,7 +174,52 @@
 
     <!-- Theme JavaScript -->
     <script src="js/agency.min.js"></script>
+    <script src="dist/ekko-lightbox.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            // delegate calls to data-toggle="lightbox"
+            $(document).on('click', '[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', function(event) {
+                event.preventDefault();
+                return $(this).ekkoLightbox({
+                    onShown: function() {
+                        if (window.console) {
+                            return console.log('Checking our the events huh?');
+                        }
+                    },
+                    onNavigate: function(direction, itemIndex) {
+                        if (window.console) {
+                            return console.log('Navigating '+direction+'. Current item: '+itemIndex);
+                        }
+                      }
+                });
+            });
+
+            //Programmatically call
+            $('#open-image').click(function (e) {
+                e.preventDefault();
+                $(this).ekkoLightbox();
+            });
+
+            // navigateTo
+            $(document).on('click', '[data-toggle="lightbox"][data-gallery="navigateTo"]', function(event) {
+                event.preventDefault();
+
+                return $(this).ekkoLightbox({
+                    onShown: function() {
+
+          this.modal().on('click', '.modal-footer a', function(e) {
+
+            e.preventDefault();
+            this.navigateTo(2);
+
+                        }.bind(this));
+
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
