@@ -23,6 +23,7 @@
     <!-- Theme CSS -->
     <link href="css/agency.min.css" rel="stylesheet">
     <link href="css/thumbnail-gallery.css" rel="stylesheet">
+    <link href="dist/ekko-lightbox.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,7 +55,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="page-header">Engagements</h1>
+          <h1 class="page-header">Portrait Photos</h1>
           <hr/>
         </div>
       </div><!-- row -->
@@ -70,7 +71,7 @@
               }
             }">
             <?php
-                $dirname = "img/Engagements/downsampled/";
+                $dirname = "img/Portrait/downsampled/";
                 $images = glob($dirname."*.*");
 
                 foreach($images as $image) {
@@ -112,6 +113,10 @@
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
 
     <!-- Theme JavaScript -->
     <script src="js/agency.min.js"></script>
