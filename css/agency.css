@@ -17,6 +17,9 @@ p {
   font-size: 14px;
   line-height: 1.75;
 }
+p.subtitle {
+    font-size: 1.9vw;
+}
 p.large {
   font-size: 16px;
 }
