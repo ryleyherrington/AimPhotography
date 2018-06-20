@@ -226,6 +226,13 @@ section {
         margin-top: 0;
         margin-bottom: 15px;
     }
+    h2.section-smaller-heading {
+        font-size: 25px;
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: white;
+        text-align: center;
+    }
     h3.section-subheading {
         font-size: 16px;
         @include serif-font;
@@ -288,8 +295,8 @@ section {
                     h4 {
                         margin: 0;
                     }
-                }                
-            }            
+                }
+            }
         }
         .portfolio-caption {
             max-width: 400px;
@@ -574,7 +581,7 @@ section#contact {
        font-weight: 700;
        color: $gray-lighter;
     }
-    :-ms-input-placeholder {  
+    :-ms-input-placeholder {
        @include heading-font;
        font-weight: 700;
        color: $gray-lighter;
@@ -704,8 +711,8 @@ ul.social-buttons {
                 -webkit-transform: rotate(90deg);
                 /* Safari and Chrome */
                 z-index:1052;
-            }            
-        }        
+            }
+        }
     }
     .modal-backdrop {
         opacity: 0;
